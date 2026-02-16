@@ -1,0 +1,32 @@
+#box1 {
+    background-color: red;
+    margin-left: 150px;
+}
+
+#box2 {
+    background-color: blue;
+    margin-left: 150px;
+    align-content: center;
+}
+
+#laila {
+    margin-left: 150px;
+    background-color: red;
+    border-radius: 50px;
+}
+
+#cat_box{
+    margin-left: 150px;
+    background-color: blue;
+    border-radius: 40px;
+
+}
+.box {
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-top: 300px;
+    float: left;
+    align-content: center;
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+{
+  "cats": [
+    {
+      "image1": "../images/laila.jpg",
+      "image2": "../images/smirk.jpg",
+      "image3": "../image/weights.jpg",
+      "image4": "../image/proper.jpg"
+    }
+  ]
+}
