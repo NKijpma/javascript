@@ -1,18 +1,53 @@
+#box_container {
+    background-image: url("../images/tiles/tablecloth.png");
+    display: flex;
+    background-color: #fff;
+    flex-direction: row;
+    max-width: 58%;
+    max-height: 28vh;
+    gap: 0.6rem;
+    margin: 13% auto 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border-style: dashed;
+    border-color: white;
+}
+
+
 #box1 {
     background-color: red;
-    margin-left: 300px;
-
+    text-align: center;
 }
+
 #box2 {
     background-color: blue;
-    margin-left: 200px;
-    align-content: center;
-}
-.box {
-    height: 200px;
-    width: 200px;
-    margin-top: 300px;
-    float: left;
     align-content: center;
     text-align: center;
+}
+
+#laila {
+    background-color: red;
+    border-radius: 50px;
+}
+
+#cat_box {
+    background-color: blue;
+    border-radius: 40px;
+    text-align: center;
+}
+
+#cat_box img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    display: block;
+    text-align: center;
+}
+
+.box {
+    margin: 8px;
+    width: 22%;
+    aspect-ratio: 1/1;
 }
