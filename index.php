@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>JavaScript </title>
     <!-- css -->
-    <link rel="stylesheet" href="css/root.css"
+    <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/website.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- font -->
