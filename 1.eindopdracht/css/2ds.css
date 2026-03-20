@@ -1,0 +1,42 @@
+.dex-top {
+background-image: url("../img/pokedex-top.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+;
+}
+
+
+.dex-bottom {
+    background-image: url("../img/pokedex-bottom.png");
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    display: block;
+}
+
+.off {
+    background-color: var(--darkblack) !important;
+    background-image: none !important;
+}
+
+.screen-on-top {
+    background-image: url("../img/2dsboot.jpg") !important;
+    background-repeat: no-repeat !important;
+}
+
+.screen-on-bottom {
+    background-image: url("../img/2dsbootbot.png") !important;
+    background-repeat: no-repeat !important;
+}
+

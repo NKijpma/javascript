@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--    test messafe als je dit ziet dan is ie geuodate-->
+
     <meta charset="UTF-8">
     <title>JavaScript </title>
     <!-- css -->
@@ -15,6 +15,9 @@
 <!--opgave 1 t/m 4-->
 <div class="topbar">
     <h1> JavaScript opgaven 1 t/m 4 </h1>
+    <div>
+        <a href="../1.eindopdracht/index.php" class="next-page-button"><h2>eindopdracht</h2></a>
+    </div>
 </div>
 <div id="box_container">
     <div id="box1" class="box"></div>

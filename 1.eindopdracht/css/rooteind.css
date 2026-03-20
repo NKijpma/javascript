@@ -1,0 +1,15 @@
+:root {
+    /*fonts*/
+    --smallfs: 0.6rem;
+    --mediumfs: 0.8rem;
+    --largefs: 1rem;
+
+
+    /*colors*/
+    --darkblack: #000000;
+    --black: #1A1A1A;
+    --blue: #20529b;
+    --white: #c7d7ff;
+
+
+}

@@ -1,0 +1,83 @@
+#pokemon_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 140px;
+    max-width: 180px;
+    max-height: 180px;
+
+    image-rendering: pixelated;
+    pointer-events: auto;
+    z-index: 9999;
+    outline: none;
+}
+
+
+#pokemon_name_id_typing {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-color: var(--blue);
+    border-bottom-right-radius: 10px;
+    padding: 2px 3px 2px 2px;
+
+    font-size: var(--mediumfs);
+    pointer-events: none;
+
+}
+
+#pokemon_name_id_typing:empty {
+    display: none;
+}
+
+#pokemon_typing {
+    margin: 0.8% auto;
+    display: flex;
+    gap: 1px;
+}
+
+#pokemon_typing img {
+    width: 40px;
+    min-width: 64px;
+    max-width: 96px;
+}
+
+#pokemon_stats {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    background-color: var(--blue);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 3px;
+    padding: 4px 6px 4px 4px;
+
+    font-size: var(--smallfs);
+    pointer-events: none;
+}
+
+#pokemon_stats:empty {
+    display: none;
+}
+
+#search {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'press start 2p', 'cursive';
+    text-align: center;
+    margin: auto;
+    background-color: black;
+    color: var(--white);
+    display: flex;
+    width: 90%;
+}
+
+#search_button {
+
+
+}
