@@ -125,9 +125,9 @@
 /* D-PAD CONTAINER */
 #dpad {
     position: absolute;
-    top: 50%;       /* schaalbaar positie */
-    left: 3%;       /* schaalbaar positie */
-    width: 15%;     /* schaalbare grootte */
+    top: 50%; /* schaalbaar positie */
+    left: 3%; /* schaalbaar positie */
+    width: 15%; /* schaalbare grootte */
     aspect-ratio: 1/1;
     pointer-events: none;
 }
@@ -186,13 +186,13 @@
 /* ALLE KNOPPEN */
 #abxy div {
     position: absolute;
-    width: 30%;      /* schaalbaar */
-    height: 30%;     /* schaalbaar */
+    width: 30%; /* schaalbaar */
+    height: 30%; /* schaalbaar */
     background: #222;
     border-radius: 50%;
     color: #ddd;
     font-family: system-ui;
-    font-size: 1.2vw;   /* schaalt mee met scherm */
+    font-size: 1.2vw; /* schaalt mee met scherm */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -294,13 +294,11 @@
 }
 
 /* POWER */
-#power-row {
+#on_button {
     display: flex;
     align-items: center;
-    gap: 8px;
-}
-
-#on_button {
+    gap: 6px;
+    right: 5%;
     width: 26px;
     height: 26px;
     background: #222;
@@ -311,6 +309,9 @@
 }
 
 #power-led {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     width: 12px;
     height: 12px;
     background: #00aaff;
