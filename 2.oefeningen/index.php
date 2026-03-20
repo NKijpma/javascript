@@ -16,7 +16,7 @@
 <div class="topbar">
     <h1> JavaScript opgaven 1 t/m 4 </h1>
     <div>
-        <a href="../1.eindopdracht/index.php" class="next-page-button"><h2>eindopdracht</h2></a>
+        <a href="../1.eindopdracht/index.html" class="next-page-button"><h2>eindopdracht</h2></a>
     </div>
 </div>
 <div id="box_container">
