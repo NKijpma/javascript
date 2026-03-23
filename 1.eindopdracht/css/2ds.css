@@ -1,9 +1,8 @@
 .dex-top {
-background-image: url("../img/pokedex-top.png");
+    background-image: url("../img/pokedex-top.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-;
+    background-repeat: no-repeat;;
 }
 
 

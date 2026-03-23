@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript-eindopdracht </title>
+    <title>2DS</title>
     <!-- ico -->
-    <link rel="icon" type="image/x-icon" href="img/ico/excadrill.ico">
-
+    <link rel="icon" type="image/x-icon" href="img/ico/pokemon.ico">
     <!-- css -->
     <link rel="stylesheet" href="css/rooteind.css">
     <link rel="stylesheet" href="css/eindopdracht.css">
     <link rel="stylesheet" href="css/2dsbody.css">
     <link rel="stylesheet" href="css/2ds.css">
     <link rel="stylesheet" href="css/pokemon.css">
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 </head>
 <body>
 
@@ -29,7 +28,6 @@
                 <div id="pokemon_stats"></div>
             </div>
         </div>
-
 
         <div id="hardware">
             <!-- Camera -->
@@ -67,7 +65,6 @@
             </div>
         </div>
 
-
         <!-- Power + Charge -->
         <div id="power-block">
 
@@ -82,15 +79,20 @@
             </div>
         </div>
 
-
         <div id="bottom-screen-border">
             <div id="bottom-screen" class="off">
-                <label>
-                    <input type="text" id="search" class="hidden" placeholder="Type here to search..."
-                           autocomplete="off"
-                           maxlength="14">
-                </label>
-                <button id="search_button" class="hidden">&#x1F50E;&#xFE0E;</button>
+                <div id="search-container">
+                    <label>
+                        <input type="text" id="search" class="hidden" placeholder="Type here to search..."
+                               autocomplete="off"
+                               maxlength="14">
+                    </label>
+                    <button id="search_button" class="hidden">&#x1F50E;&#xFE0E;</button>
+                </div>
+                <div id="suggestion-boxes">
+
+                </div>
+
             </div>
         </div>
     </div>
@@ -98,7 +100,13 @@
 
 
 <!-- js -->
+<script src="https://unpkg.com/@strudel/web@1.0.3"></script>
+<script src="js/strudel.js"></script>
+
+<script type="module" src="js/functions.js"></script>
 <script type="module" src="js/eindopdracht.js"></script>
 <script type="module" src="js/2ds.js"></script>
+<script type="module" src="js/music.js"></script>
+
 </body>
 </html>

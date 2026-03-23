@@ -1,39 +1,7 @@
 //2ds.js
 
-// verstopte functies idk is de main code wat mooier zo
-
-
-export function no_pokemon() {
-    document.querySelector("#pokemon_name_id_typing").innerHTML = "No pokemon found";
-    document.querySelector("#pokemon_image").src =
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201-question.png";
-    document.querySelector("#pokemon_stats").innerHTML = "";
-}
-
-export function poke_info(name, id, typing) {
-    const pokemon = document.querySelector("#pokemon_name_id_typing");
-
-    pokemon.innerHTML = `
-    <div>${name} ${'#' + id}</div>
-    <div id="pokemon_typing">${typing}</div>
-    `;
-}
-
-export function poke_stats(height, weight, exp) {
-    const statsBox = document.querySelector("#pokemon_stats");
-
-    statsBox.innerHTML = `
-        <div>Height: ${height}</div>
-        <div>Weight: ${weight}</div>
-        <div>Base EXP: ${exp}</div>
-    `;
-}
-
-export function reset_pokemon() {
-    document.querySelector("#pokemon_name_id_typing").innerHTML = "";
-    document.querySelector("#pokemon_image").src = "";
-    document.querySelector("#pokemon_stats").innerHTML = "";
-}
+// import functions van functions.js
+import {pokemon_suggestions, reset_pokemon} from "./functions.js";
 
 // aan uit 2ds
 const on_button = document.getElementById("on_button");
@@ -51,6 +19,7 @@ on_button.addEventListener("click", () => {
 
     if (powered) {
         document.getElementById("outer-shell").classList.add("glow");
+
 
         topScreen.className = "";
         bottomScreen.className = "";
@@ -72,6 +41,7 @@ on_button.addEventListener("click", () => {
             searchButton.classList.add("visible");
 
             searchInput.focus();
+            pokemon_suggestions()
         }, 1000);
     } else {
         document.getElementById("outer-shell").classList.remove("glow");
@@ -88,5 +58,5 @@ on_button.addEventListener("click", () => {
         reset_pokemon();
         searchInput.value = "";
     }
-
 });
+

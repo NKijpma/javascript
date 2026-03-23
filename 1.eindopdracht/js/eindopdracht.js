@@ -1,29 +1,11 @@
 // eindopdracht.js
 
-// import clear van 2ds.js
-import {no_pokemon, poke_info, poke_stats, reset_pokemon} from "./2ds.js";
+// import functions van functions.js
+import {focusSearch, pokemon_suggestions,no_pokemon, poke_info, poke_stats, reset_pokemon, shiny_swap, typechart} from "./functions.js";
 
 
-const searchInput = document.getElementById("search");
-
-let shiny = false;
-const img = document.querySelector("#pokemon_image");
-
-img.addEventListener("click", () => {
-    const id = img.dataset.id;
-    if (!id) return;
-
-    shiny = !shiny;
-
-    if (shiny) {
-        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/${id}.gif`;
-    } else {
-        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${id}.gif`;
-    }
-
-    searchInput.focus();
-});
-
+// swapt image naar shiny on click
+shiny_swap()
 
 // search werkt met enter
 document.querySelector("#search").addEventListener("keydown", function (event) {
@@ -43,10 +25,9 @@ document.querySelector("#search_button").addEventListener('click', async functio
     if (!Array.isArray(data) || data.length === 0) {
         reset_pokemon();
         no_pokemon();
-        searchInput.focus();
+        focusSearch()
         return;
     }
-
 
     const p = data[0]; // haalt alleen de eerste pokemon uit de db
 
@@ -67,33 +48,12 @@ document.querySelector("#search_button").addEventListener('click', async functio
         }
     });
 
-    //typing (used for type images)
-    const typechart = {
-        "normal": 1,
-        "fighting": 2,
-        "flying": 3,
-        "poison": 4,
-        "ground": 5,
-        "rock": 6,
-        "bug": 7,
-        "ghost": 8,
-        "steel": 9,
-        "fire": 10,
-        "water": 11,
-        "grass": 12,
-        "electric": 13,
-        "psychic": 14,
-        "ice": 15,
-        "dragon": 16,
-        "dark": 17,
-        "fairy": 18
-    };
-
-
     // images met corresponding types
     let typeIcons = types.map(t => {
         let typeId = typechart[t];
-        return `<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/${typeId}.png" alt="">`;
+        return `<img src= https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/${typeId}.png alt="">`;
+
+        // "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/${typeId}.png"
     });
 
     // Sprite/image werkt met de id ding en image
@@ -101,7 +61,6 @@ document.querySelector("#search_button").addEventListener('click', async functio
 
     img.dataset.id = id;
     img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${id}.gif`;
-    shiny = false;
 
 
     //name, id and typing
@@ -111,6 +70,11 @@ document.querySelector("#search_button").addEventListener('click', async functio
     poke_stats(height, weight, exp);
 
     // focus search
-    searchInput.focus();
+    focusSearch()
+
+    pokemon_suggestions();
+
+
+    window.allPokemon = data;
 
 });

@@ -48,6 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--black);
 }
 
 #top-screen {
@@ -74,6 +75,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--black);
 }
 
 #bottom-screen {
@@ -124,10 +126,11 @@
 
 /* D-PAD CONTAINER */
 #dpad {
+    font-size: var(--smallfs);
     position: absolute;
-    top: 50%; /* schaalbaar positie */
-    left: 3%; /* schaalbaar positie */
-    width: 15%; /* schaalbare grootte */
+    top: 50%;
+    left: 3%;
+    width: 15%;
     aspect-ratio: 1/1;
     pointer-events: none;
 }
