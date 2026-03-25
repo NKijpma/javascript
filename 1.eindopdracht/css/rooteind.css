@@ -6,9 +6,11 @@
 
 
     /*colors*/
+    --black: #1A1A1A;
     --darkblack: #000000;
     --transparentblack: rgb(0 0 0 / 40%);
-    --black: #1A1A1A;
+
     --blue: #20529b;
-    --white: rgb(255 255 255 / 95%);
+    --white: rgb(255 255 255);
+    --transparentwhite: rgb(255 255 255 / 30%);
 }

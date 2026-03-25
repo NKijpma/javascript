@@ -1,7 +1,16 @@
 // eindopdracht.js
 
 // import functions van functions.js
-import {focusSearch, pokemon_suggestions,no_pokemon, poke_info, poke_stats, reset_pokemon, shiny_swap, typechart} from "./functions.js";
+import {
+    focusSearch,
+    no_pokemon,
+    poke_info,
+    poke_stats,
+    pokemon_suggestions,
+    reset_pokemon,
+    shiny_swap,
+    typechart
+} from "./functions.js";
 
 
 // swapt image naar shiny on click
@@ -26,6 +35,7 @@ document.querySelector("#search_button").addEventListener('click', async functio
         reset_pokemon();
         no_pokemon();
         focusSearch()
+        pokemon_suggestions();
         return;
     }
 

@@ -5,12 +5,78 @@ html, body {
     color: var(--white);
 }
 
-html{
+html {
     background: radial-gradient(
             circle at center,
             #030614 20%,
             #000000 100%
     ) no-repeat fixed;
     background-size: cover;
+
+}
+
+
+#music-controls {
+    position: absolute;
+    background: var(--transparentwhite);
+    padding: 4px;
+    border-radius: 5px;
+    bottom: 1%;
+    left: 1%;
+    margin: auto;
+    text-align: center;
+}
+
+#music-name {
+    font-size: var(--largefs);
+    font-family: "Arial Rounded MT Bold", sans-serif;
+}
+
+#back-button {
+    background: none;
+    color: var(--darkblack);
+    outline: none;
+    border: none;
+}
+
+#play-pause-button {
+    background: none;
+    color: var(--darkblack);
+    outline: none;
+    border: none;
+}
+
+#forward-button {
+    background: none;
+    color: var(--darkblack);
+    outline: none;
+    border: none;
+}
+
+#random-button {
+    background: none;
+    color: var(--darkblack);
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#poke_coin {
+    position: absolute;
+    bottom: 1%;
+    left: 10.4%;
+    border-radius: 50%;
+    width: 50px;
+    aspect-ratio: 1;
+    animation: rotate 2s infinite linear;
 
 }

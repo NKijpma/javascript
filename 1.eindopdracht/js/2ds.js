@@ -2,9 +2,11 @@
 
 // import functions van functions.js
 import {pokemon_suggestions, reset_pokemon} from "./functions.js";
+import {pause, play, playPauseBtn} from "./music.js";
 
 // aan uit 2ds
 const on_button = document.getElementById("on_button");
+const led = document.getElementById("power-led");
 
 const topScreen = document.getElementById("top-screen");
 const bottomScreen = document.getElementById("bottom-screen");
@@ -19,7 +21,6 @@ on_button.addEventListener("click", () => {
 
     if (powered) {
         document.getElementById("outer-shell").classList.add("glow");
-
 
         topScreen.className = "";
         bottomScreen.className = "";
@@ -40,11 +41,23 @@ on_button.addEventListener("click", () => {
             searchButton.classList.remove("hidden");
             searchButton.classList.add("visible");
 
+            led.classList.add("power-led-on");
+            led.classList.remove("power-led-off");
+
+            play();
+            playPauseBtn.textContent = '⏸';
+
             searchInput.focus();
-            pokemon_suggestions()
-        }, 1000);
+            pokemon_suggestions();
+        }, 800);
     } else {
         document.getElementById("outer-shell").classList.remove("glow");
+
+        pause()
+        playPauseBtn.textContent = '▶';
+
+        led.classList.remove("power-led-on");
+        led.classList.add("power-led-off");
 
         topScreen.className = "off";
         bottomScreen.className = "off";

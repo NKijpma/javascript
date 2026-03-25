@@ -33,15 +33,16 @@
             <!-- Camera -->
             <div id="camera"></div>
 
+            <!-- Speaker -->
+            <div id="speaker"></div>
+
             <!-- Circle Pad -->
             <div id="circle-pad"></div>
 
             <!-- D-Pad -->
             <div id="dpad">
-                <div id="dpad-up"></div>
-                <div id="dpad-down"></div>
-                <div id="dpad-left"></div>
-                <div id="dpad-right"></div>
+                <div id="dpad-vertical"></div>
+                <div id="dpad-horizontal"></div>
             </div>
 
             <!-- ABXY Buttons -->
@@ -63,21 +64,15 @@
                     <span>SELECT</span>
                 </div>
             </div>
+
+            <button id="home-button">&#8962;</button>
         </div>
 
-        <!-- Power + Charge -->
-        <div id="power-block">
+        <div id="charge-led"></div>
+        <span id="charge-icon">&#x1F50C;</span>
 
-            <div id="charge-row">
-                <div id="charge-led"></div>
-                <span id="charge-icon">&#x1F50C;</span>
-            </div>
-
-            <div id="power-row">
-                <button id="on_button"> &#x23FB;</button>
-                <div id="power-led"></div>
-            </div>
-        </div>
+        <button id="on_button"> &#x23FB;</button>
+        <div id="power-led" class="power-led-off"></div>
 
         <div id="bottom-screen-border">
             <div id="bottom-screen" class="off">
@@ -90,23 +85,32 @@
                     <button id="search_button" class="hidden">&#x1F50E;&#xFE0E;</button>
                 </div>
                 <div id="suggestion-boxes">
-
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 
 
-<!-- js -->
-<script src="https://unpkg.com/@strudel/web@1.0.3"></script>
-<script src="js/strudel.js"></script>
+<div id="music-controls">
+    <div id="music-name"></div>
 
+    <button id="back-button">⏮</button>
+    <button id="play-pause-button">▶</button>
+    <button id="forward-button">⏭</button>
+    <button id="random-button">⤨</button>
+
+</div>
+
+<img src="img/pokecoin.png" alt="" id="poke_coin">
+<div id="audio-visualizer"></div>
+<!-- js -->
+
+<script type="module" src="js/music.js"></script>
 <script type="module" src="js/functions.js"></script>
 <script type="module" src="js/eindopdracht.js"></script>
 <script type="module" src="js/2ds.js"></script>
-<script type="module" src="js/music.js"></script>
+
 
 </body>
 </html>
