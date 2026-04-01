@@ -13,6 +13,8 @@
 
     --blue: #20529b;
     --green: #5f9839;
+    --darkgreen: #568e30;
+    --yellow: #cdb628;
     --white: rgb(255 255 255);
     --transparentwhite: rgb(255 255 255 / 30%);
 }
