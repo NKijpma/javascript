@@ -13,48 +13,51 @@ const bottomScreen = document.getElementById("bottom-screen");
 
 const searchInput = document.getElementById("search");
 const searchButton = document.getElementById("search_button");
-
+//start uit
 let powered = false;
-
+// nodig voor het verwijderen van timeout
+let power_timeout
+// zorgt voor on bij spatie
+document.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+        e.preventDefault();
+        on_button.click();
+    }
+});
 on_button.addEventListener("click", () => {
     powered = !powered;
-
     if (powered) {
-        document.getElementById("outer-shell").classList.add("glow");
+        document.getElementById("shell").classList.add("glow");
 
         topScreen.className = "";
         bottomScreen.className = "";
 
-        searchInput.classList.add("hidden");
-        searchButton.classList.add("hidden");
-
         topScreen.classList.add("screen-on-top");
         bottomScreen.classList.add("screen-on-bottom");
 
-        setTimeout(() => {
+        power_timeout = setTimeout(() => {
+            play();
+            playPauseBtn.textContent = '⏸';
+
             topScreen.className = "dex-top";
             bottomScreen.className = "dex-bottom";
 
             searchInput.classList.remove("hidden");
-            searchInput.classList.add("visible");
-
             searchButton.classList.remove("hidden");
-            searchButton.classList.add("visible");
 
             led.classList.add("power-led-on");
             led.classList.remove("power-led-off");
-
-            play();
-            playPauseBtn.textContent = '⏸';
 
             searchInput.focus();
             pokemon_suggestions();
         }, 800);
     } else {
-        document.getElementById("outer-shell").classList.remove("glow");
+        document.getElementById("shell").classList.remove("glow");
 
-        pause()
+        pause();
         playPauseBtn.textContent = '▶';
+
+        clearTimeout(power_timeout);
 
         led.classList.remove("power-led-on");
         led.classList.add("power-led-off");
@@ -62,14 +65,10 @@ on_button.addEventListener("click", () => {
         topScreen.className = "off";
         bottomScreen.className = "off";
 
-        searchInput.classList.remove("visible");
         searchInput.classList.add("hidden");
-
-        searchButton.classList.remove("visible");
         searchButton.classList.add("hidden");
 
         reset_pokemon();
         searchInput.value = "";
     }
 });
-

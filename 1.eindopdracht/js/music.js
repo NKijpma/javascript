@@ -21,51 +21,60 @@ const playlist = [
 //=====================
 // change music volume
 //=====================
-const VOLUME = 0.05;
-//=====================
+const VOLUME = 0.25;
 
-//=====================
 let current_track = (Math.floor(Math.random() * playlist.length));
 let current_audio = new Audio(playlist[current_track].src);
 current_audio.addEventListener('ended', () => next());
 current_audio.volume = VOLUME;
 let is_playing = false;
 
+//nodig voor het spinnen van vinyl
 
+const record = document.getElementById('poke_coin');
+
+// maak eigen note spawner met een gif is wrs korter en simpler
+
+export const playPauseBtn = document.getElementById('play-pause-button');
+
+//Wordt vaak gebruikt
 function update_name() {
     document.getElementById('music-name').textContent = playlist[current_track].name;
 }
 
+
 export function play() {
     current_audio.play().catch(console.error);
     is_playing = true;
+    record.classList.add('rotate');
 }
 
 export function pause() {
     current_audio.pause();
     is_playing = false;
+    record.classList.remove('rotate');
 }
 
 function switch_track(index) {
     current_track = index;
-    current_audio.addEventListener('ended', () => next());
     current_audio.pause();
-    current_audio.volume = VOLUME;
     current_audio = new Audio(playlist[index].src);
+    current_audio.volume = VOLUME;
+    current_audio.addEventListener('ended', () => next());
     current_audio.play().catch(console.error);
     is_playing = true;
+    record.classList.add('rotate');
+    playPauseBtn.textContent = '⏸';
     update_name();
 }
 
 function next() {
     switch_track((current_track + 1) % playlist.length);
-    current_audio.volume = VOLUME;
 
 }
 
 function previous() {
     switch_track((current_track - 1 + playlist.length) % playlist.length);
-    current_audio.volume = VOLUME;
 }
 
 function random() {
@@ -85,8 +94,6 @@ function toggle() {
 
 
 // Buttons
-export const playPauseBtn = document.getElementById('play-pause-button');
-
 document.getElementById('play-pause-button').addEventListener('click', () => {
     const nowPlaying = toggle();
     playPauseBtn.textContent = nowPlaying ? '⏸' : '▶';

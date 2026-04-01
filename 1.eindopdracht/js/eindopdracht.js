@@ -8,6 +8,7 @@ import {
     poke_stats,
     pokemon_suggestions,
     reset_pokemon,
+    restart_animation,
     shiny_swap,
     typechart
 } from "./functions.js";
@@ -15,6 +16,7 @@ import {
 
 // swapt image naar shiny on click
 shiny_swap()
+
 
 // search werkt met enter
 document.querySelector("#search").addEventListener("keydown", function (event) {
@@ -39,17 +41,17 @@ document.querySelector("#search_button").addEventListener('click', async functio
         return;
     }
 
-    const p = data[0]; // haalt alleen de eerste pokemon uit de db
+    const first = data[0]; // haalt alleen de eerste pokemon uit de db
 
 
     //name & id
-    let name = p.pok_name
-    let id = p.pok_id
+    let name = first.pok_name
+    let id = first.pok_id
     //stats
     let types = [];
-    let height = p.pok_height / 10 + "M"
-    let weight = p.pok_weight / 10 + "KG"
-    let exp = p.pok_base_experience
+    let height = first.pok_height / 10 + "M"
+    let weight = first.pok_weight / 10 + "KG"
+    let exp = first.pok_base_experience
 
     // loopt door totdat tot dat alle types zijn gevonden
     data.forEach(pokemon => {
@@ -63,7 +65,6 @@ document.querySelector("#search_button").addEventListener('click', async functio
         let typeId = typechart[t];
         return `<img src= https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/${typeId}.png alt="">`;
 
-        // "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/${typeId}.png"
     });
 
     // Sprite/image werkt met de id ding en image
@@ -84,7 +85,11 @@ document.querySelector("#search_button").addEventListener('click', async functio
 
     pokemon_suggestions();
 
-
     window.allPokemon = data;
+
+
+// gebruik het voor je elementen
+    restart_animation(document.getElementById('pokemon_stats'));
+    restart_animation(document.getElementById('pokemon_name_id_typing'));
 
 });

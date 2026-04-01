@@ -1,33 +1,17 @@
-#outer-shell {
-    margin: 6% auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 660px;
-    height: 600px;
-
-    background-color: var(--blue);
-
-    border-radius: 14% 14% 6% 6%;
-}
-
-#inner-shell {
+#shell {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2% auto;
 
-    width: 99%;
-    height: 99%;
-    background-color: var(--black);
+    width: 41vw;
+    aspect-ratio: 1;
     border-radius: 14% 14% 6% 6%;
-
     transition: box-shadow 0.4s ease;
-
 }
 
-#outer-shell.glow {
+#shell.glow {
     box-shadow: 0 0 80px 40px rgba(255, 255, 255, 0.03),
     0 0 160px 80px rgba(255, 255, 255, 0.02),
     0 0 260px 130px rgba(255, 255, 255, 0.015);
@@ -36,14 +20,14 @@
 
 #top-screen-border {
     position: absolute;
-    top: 40px;
+    top: 7%;
     left: 50%;
     transform: translateX(-50%);
 
     width: 60%;
     height: 40%;
     border-radius: 2%;
-    border: 3px solid var(--darkblack);
+    border: 0.2vw solid var(--darkblack);
 
     display: flex;
     justify-content: center;
@@ -63,14 +47,14 @@
 
 #bottom-screen-border {
     position: absolute;
-    bottom: 44px;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
 
     width: 52%;
     height: 42%;
     border-radius: 2%;
-    border: 3px solid var(--darkblack);
+    border: 0.2vw solid var(--darkblack);
 
     display: flex;
     justify-content: center;
@@ -102,11 +86,11 @@
     top: 1.4%;
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
+    width: 3%;
+    aspect-ratio: 1;
     background: #111;
     border-radius: 50%;
-    border: 3px solid #333;
+    border: 0.2vw solid #333;
     pointer-events: none;
 }
 
@@ -114,19 +98,19 @@
     position: absolute;
     top: 14%;
     left: 5%;
-    width: 4px;
-    height: 4px;
+    width: 0.5%;
+    aspect-ratio: 1;
     background: black;
     border-radius: 50%;
 
-    box-shadow: 10px 0 black,
-    20px 0 black,
-    0 10px black,
-    10px 10px black,
-    20px 10px black,
-    0 20px black,
-    10px 20px black,
-    20px 20px black;
+    box-shadow: 0.8vw 0 black,
+    1.6vw 0 black,
+    0 0.8vw black,
+    0.8vw 0.8vw black,
+    1.6vw 0.8vw black,
+    0 1.6vw black,
+    0.8vw 1.6vw black,
+    1.6vw 1.6vw black;
 }
 
 
@@ -134,14 +118,14 @@
     position: absolute;
     top: 30%;
     left: 3%;
-    width: 52px;
-    height: 52px;
+    width: 9%;
+    aspect-ratio: 1;
     background: #555;
     border-radius: 50%;
-    border: 18px solid #222;
+    border: 1vw solid #222;
     pointer-events: none;
-    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.05),
-    inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0.15vw 0.23vw rgba(255, 255, 255, 0.05),
+    inset 0 -0.15vw 0.23vw rgba(0, 0, 0, 0.4);
 }
 
 
@@ -162,7 +146,6 @@
     left: 35%;
     width: 30%;
     height: 100%;
-    background: #222;
     border-radius: 10%;
 }
 
@@ -173,7 +156,6 @@
     left: 0;
     width: 100%;
     height: 30%;
-    background: #222;
     border-radius: 10%;
 }
 
@@ -191,16 +173,12 @@
 /* ALLE KNOPPEN */
 #abxy div {
     position: absolute;
-    width: 30%; /* schaalbaar */
-    height: 30%; /* schaalbaar */
+    width: 30%;
+    aspect-ratio: 1;
     background: #222;
     border-radius: 50%;
-    border: 3px solid #111;
-    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.05),
-    inset 0 -2px 3px rgba(0, 0, 0, 0.4);
-    color: var(--darkblack);
     font-family: system-ui;
-    font-size: 1.2vw; /* schaalt mee met scherm */
+    font-size: var(--largefs);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -235,59 +213,52 @@
     transform: translateY(-50%);
 }
 
-
-/* START / SELECT */
 #start-select {
     position: absolute;
-    bottom: 110px;
-    transform: translateX(-50%);
+    left: 85%;
+    top: 60%;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    left: 90%;
-    top: 60%;
+    gap: 0.5vw;
 }
 
 .ss-row {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5vw;
 }
 
 #start-btn,
 #select-btn {
-    width: 18px;
-    height: 18px;
-    background: #1a1a1a;
+    width: 1vw;
+    aspect-ratio: 1;
     border-radius: 50%;
-    border: 2px solid #0d0d0d;
-    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.05),
-    inset 0 -2px 3px rgba(0, 0, 0, 0.4);
 }
 
 .ss-row span {
     font-family: system-ui;
-    font-size: 11px;
+    font-size: var(--mediumfs);
     color: var(--darkblack);
-    letter-spacing: 1px;
+    letter-spacing: 0.05vw;
 }
+
 #home-button {
-    font-size: 1.8rem;
+    font-size: var(--gigafs);
     text-align: center;
-    width: 52px;
-    height: 38px;
+    width: 9%;
+    aspect-ratio: 24/17;
     position: absolute;
     margin: auto;
-    padding-bottom: 40px;
+    justify-content: center;
     top: 92.5%;
     left: 50%;
     transform: translateX(-50%);
     background: #222;
-    border-radius: 20px; /* FIXED */
-    border: 2px solid #111;
+    border-radius: 20px;
+    border: 0.2vw solid #111;
     color: #fff;
-    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.05),
-    inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0.15vw 0.23vw rgba(255, 255, 255, 0.05),
+    inset 0 -0.15vw 0.23vw rgba(0, 0, 0, 0.4);
 }
 
 
@@ -297,18 +268,18 @@
     position: absolute;
     display: flex;
     align-items: center;
-    gap: 6px;
-    width: 12px;
-    height: 12px;
+    gap: 4%;
+    width: 2%;
+    aspect-ratio: 1;
     background: #444;
     border-radius: 50%;
-    border: 2px solid #222;
+    border: 0.1vw solid #222;
 
 }
 
 #charge-icon {
     position: absolute;
-    font-size: 12px;
+    font-size: var(--mediumfs);
     color: #666;
     left: 85.5%;
     top: 80%;
@@ -316,16 +287,15 @@
 }
 
 #on_button {
+    font-family: system-ui;
+    font-size: var(--smallfs);
     left: 85%;
     top: 84%;
     display: flex;
     align-items: center;
-    width: 26px;
-    height: 26px;
-    background: #222;
+    width: 4%;
+    aspect-ratio: 1;
     border-radius: 50%;
-    border: 3px solid #111;
-    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.05),
-    inset 0 -2px 3px rgba(0, 0, 0, 0.4);
     position: absolute;
+    justify-content: center;
 }

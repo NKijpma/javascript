@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="img/ico/pokemon.ico">
     <!-- css -->
     <link rel="stylesheet" href="css/rooteind.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/eindopdracht.css">
     <link rel="stylesheet" href="css/2dsbody.css">
     <link rel="stylesheet" href="css/2ds.css">
@@ -16,98 +17,105 @@
 </head>
 <body>
 
-<div id="outer-shell">
-    <div id="inner-shell">
-        <div id="top-screen-border">
+<div id="dropdown-menu">
+    <span id="menu-toggle">☰</span>
+    <div id="color-options" class="hidden">
+        <div id="blue">blue</div>
+        <div id="green">green</div>
+        <div id="pink">pink</div>
+    </div>
+</div>
+<div id="music-controls-container">
 
-            <div id="top-screen" class="off">
-                <div id="pokemon_name_id_typing"></div>
-                <div class="sprite-wrapper">
-                    <img id="pokemon_image" alt="" src="">
-                </div>
-                <div id="pokemon_stats"></div>
+    <div id="music-name"></div>
+
+    <div id="music-buttons">
+        <button id="back-button">⏮</button>
+        <button id="play-pause-button">▶</button>
+        <button id="forward-button">⏭</button>
+        <button id="random-button">⤨</button>
+    </div>
+
+    <img src="img/pokecoin.png" alt="" id="poke_coin">
+
+</div>
+
+<div id="shell" class="blue-shell">
+    <div id="top-screen-border">
+
+        <div id="top-screen" class="off">
+            <div id="pokemon_name_id_typing"></div>
+            <div class="sprite-wrapper">
+                <img id="pokemon_image" alt="" src="">
+            </div>
+            <div id="pokemon_stats"></div>
+        </div>
+    </div>
+
+    <div id="hardware">
+        <!-- Camera -->
+        <div id="camera"></div>
+
+        <!-- Speaker -->
+        <div id="speaker"></div>
+
+        <!-- Circle Pad -->
+        <div id="circle-pad"></div>
+
+        <!-- D-Pad -->
+        <div id="dpad">
+            <div id="dpad-vertical"></div>
+            <div id="dpad-horizontal"></div>
+        </div>
+
+        <!-- ABXY Buttons -->
+        <div id="abxy">
+            <div id="btn-x">X</div>
+            <div id="btn-y">Y</div>
+            <div id="btn-a">A</div>
+            <div id="btn-b">B</div>
+        </div>
+
+        <!-- Start / Select -->
+        <div id="start-select">
+            <div class="ss-row">
+                <div id="start-btn"></div>
+                <span>START</span>
+            </div>
+            <div class="ss-row">
+                <div id="select-btn"></div>
+                <span>SELECT</span>
             </div>
         </div>
 
-        <div id="hardware">
-            <!-- Camera -->
-            <div id="camera"></div>
+        <button id="home-button">&#8962;</button>
+    </div>
 
-            <!-- Speaker -->
-            <div id="speaker"></div>
+    <div id="charge-led"></div>
+    <span id="charge-icon">&#x1F50C;</span>
 
-            <!-- Circle Pad -->
-            <div id="circle-pad"></div>
+    <button id="on_button"> &#x23FB;</button>
+    <div id="power-led" class="power-led-off"></div>
 
-            <!-- D-Pad -->
-            <div id="dpad">
-                <div id="dpad-vertical"></div>
-                <div id="dpad-horizontal"></div>
+    <div id="bottom-screen-border">
+        <div id="bottom-screen" class="off">
+            <div id="search-container">
+                <input type="text" id="search" class="hidden" placeholder="Type here to search..."
+                       autocomplete="off"
+                       maxlength="14"
+                       aria-label="Type here to search...">
+                <button id="search_button" class="hidden">&#x1F50E;&#xFE0E;</button>
             </div>
-
-            <!-- ABXY Buttons -->
-            <div id="abxy">
-                <div id="btn-x">X</div>
-                <div id="btn-y">Y</div>
-                <div id="btn-a">A</div>
-                <div id="btn-b">B</div>
-            </div>
-
-            <!-- Start / Select -->
-            <div id="start-select">
-                <div class="ss-row">
-                    <div id="start-btn"></div>
-                    <span>START</span>
-                </div>
-                <div class="ss-row">
-                    <div id="select-btn"></div>
-                    <span>SELECT</span>
-                </div>
-            </div>
-
-            <button id="home-button">&#8962;</button>
-        </div>
-
-        <div id="charge-led"></div>
-        <span id="charge-icon">&#x1F50C;</span>
-
-        <button id="on_button"> &#x23FB;</button>
-        <div id="power-led" class="power-led-off"></div>
-
-        <div id="bottom-screen-border">
-            <div id="bottom-screen" class="off">
-                <div id="search-container">
-                    <label>
-                        <input type="text" id="search" class="hidden" placeholder="Type here to search..."
-                               autocomplete="off"
-                               maxlength="14">
-                    </label>
-                    <button id="search_button" class="hidden">&#x1F50E;&#xFE0E;</button>
-                </div>
-                <div id="suggestion-boxes">
-                </div>
+            <div id="suggestion-boxes">
             </div>
         </div>
     </div>
 </div>
-
-
-<div id="music-controls">
-    <div id="music-name"></div>
-
-    <button id="back-button">⏮</button>
-    <button id="play-pause-button">▶</button>
-    <button id="forward-button">⏭</button>
-    <button id="random-button">⤨</button>
-
-</div>
-
-<img src="img/pokecoin.png" alt="" id="poke_coin">
-<div id="audio-visualizer"></div>
 <!-- js -->
 
 <script type="module" src="js/music.js"></script>
 <script type="module" src="js/functions.js"></script>
+<script type="module" src="js/menu.js"></script>
 <script type="module" src="js/eindopdracht.js"></script>
 <script type="module" src="js/2ds.js"></script>
 

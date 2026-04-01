@@ -121,6 +121,12 @@ export function pokemon_suggestions() {
     });
 }
 
+export function restart_animation(element) {
+    element.style.animation = 'none';
+    element.offsetHeight;
+    element.style.animation = '';
+}
+
 export function reset_pokemon() {
     document.querySelector("#pokemon_name_id_typing").innerHTML = "";
     document.querySelector("#pokemon_image").src = "";

@@ -1,8 +1,9 @@
 :root {
     /*fonts*/
-    --smallfs: 0.6rem;
-    --mediumfs: 0.8rem;
-    --largefs: 1rem;
+    --smallfs:  clamp(0.4vw, 0.6vw, 0.8vw);
+    --mediumfs: clamp(0.6vw, 0.8vw, 1vw);
+    --largefs:  clamp(0.8vw, 1vw,   1.2vw);
+    --gigafs:   clamp(1.4vw, 1.8vw, 2vw);
 
 
     /*colors*/
@@ -11,6 +12,7 @@
     --transparentblack: rgb(0 0 0 / 40%);
 
     --blue: #20529b;
+    --green: #5f9839;
     --white: rgb(255 255 255);
     --transparentwhite: rgb(255 255 255 / 30%);
 }
