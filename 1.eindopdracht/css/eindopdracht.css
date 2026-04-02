@@ -14,26 +14,39 @@ html {
     background-size: cover;
 
 }
-
 #dropdown-menu {
-    margin: 0;
-    padding: 0;
+    top: 1%;
+    left: 1%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3vw;
+    z-index: 999;
 }
 
 #menu-toggle {
     margin: 0;
     padding: 0;
     font-size: var(--largefs);
+    cursor: pointer;
 }
 
-#color-options,
+#color-options {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3vw;
+}
+
 #blue,
 #green,
 #pink {
+    border-radius: 50%;
+    width: 1vw;
+    aspect-ratio: 1;
     font-family: 'arial', 'cursive';
     margin: 0;
     padding: 0;
-    width: 10%;
 }
 
 #blue {
