@@ -12,11 +12,10 @@
 }
 
 #shell.glow {
-    box-shadow: 0 0 80px 40px rgba(255, 255, 255, 0.03),
-    0 0 160px 80px rgba(255, 255, 255, 0.02),
-    0 0 260px 130px rgba(255, 255, 255, 0.015);
+    box-shadow: 0 0 8vw 4vw rgba(255, 255, 255, 0.03),
+    0 0 16vw 8vw rgba(255, 255, 255, 0.02),
+    0 0 26vw 13vw rgba(255, 255, 255, 0.015);
 }
-
 
 #top-screen-border {
     position: absolute;

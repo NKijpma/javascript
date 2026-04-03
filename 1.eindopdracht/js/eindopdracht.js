@@ -17,7 +17,6 @@ import {
 // swapt image naar shiny on click
 shiny_swap()
 
-
 // search werkt met enter
 document.querySelector("#search").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {

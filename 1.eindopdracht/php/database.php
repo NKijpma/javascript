@@ -1,6 +1,9 @@
 <?php
 // connects to pokemon sql database
+
+// zegt tegen browser dat het een json is
 header("Content-Type: application/json");
+
 //database login info
 $servername = "localhost";
 $username = "root";
@@ -21,6 +24,7 @@ if ($q === '') {
     exit;
 }
 // sql query
+// ctype_digit checkt of het alleen nummers bevat
 if (ctype_digit($q)) {
     $sql = "
     SELECT pokemon.*, types.type_name
@@ -30,6 +34,7 @@ if (ctype_digit($q)) {
     WHERE pok_id = $q
     ";
 } else {
+    // als het letters is kan het afgerond worden door like
     $sql = "
     SELECT pokemon.*, types.type_name
     FROM pokemon
@@ -40,16 +45,11 @@ if (ctype_digit($q)) {
     ";
 }
 
-
 // doet de query
 $result = $connect->query($sql);
 
-
-//stopt data in een array
-$data = [];
-while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
-}
+//stopt data in een array en maakt kolom namen de key dus pok_id is key pok_name enzovoort
+$data = $result->fetch_all(MYSQLI_ASSOC);
 // verandert data naar json
 echo json_encode($data);
 
