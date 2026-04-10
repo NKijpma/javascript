@@ -2,7 +2,6 @@ const PATH = window.location.port === '80' || window.location.port === ''
     ? (window.location.hostname === 'localhost' ? '/js' : '')
     : '';
 
-
 const playlist = [
     //pokemon
     {src: `${PATH}/1.eindopdracht/mp3/poke-mp3/pokemon-black-white-n-final-battle.mp3`, name: "N Final Battle"},
