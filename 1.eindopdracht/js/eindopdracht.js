@@ -40,7 +40,7 @@ document.querySelector("#search_button").addEventListener('click', async functio
         return;
     }
 
-    const first = data[0]; // haalt alleen de eerste pokemon uit de db
+    const first = data[0]; // haalt alleen de eerste pokemon uit de db (anders zie je meerde types op 1 pokemon daar sql like%)
 
 
     //name & id

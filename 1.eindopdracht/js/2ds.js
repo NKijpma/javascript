@@ -1,6 +1,6 @@
 //2ds.js
 
-// import functions van functions.js
+// import functions van functions.js en music.js
 import {pokemon_suggestions, reset_pokemon} from "./functions.js";
 import {pause, play, playPauseBtn} from "./music.js";
 
@@ -13,17 +13,33 @@ const bottomScreen = document.getElementById("bottom-screen");
 
 const searchInput = document.getElementById("search");
 const searchButton = document.getElementById("search_button");
-//start uit
+
 let powered = false;
 // nodig voor het verwijderen van timeout
 let power_timeout
-// zorgt voor on bij spatie
-document.addEventListener("keydown", (e) => {
-    if (e.key === " ") {
-        e.preventDefault();
+
+// zorgt dat spatie niet in de input veld kan (kan nog wel, maar niet als je aan ingedrukt houdt)
+searchInput.addEventListener("keydown", (pressed) => {
+    if (pressed.key === " ") pressed.preventDefault();
+});
+
+//boolean voor single space-bar on off
+let spaceHeld = false;
+//als space ingedrukt is klik aan knop
+document.addEventListener("keydown", (pressed) => {
+    if (pressed.key === " " && !spaceHeld) {
+        pressed.preventDefault();
+        spaceHeld = true;
         on_button.click();
     }
 });
+// doe weer uit
+document.addEventListener("keyup", (pressed) => {
+    if (pressed.key === " ") {
+        spaceHeld = false;
+    }
+});
+
 on_button.addEventListener("click", () => {
     powered = !powered;
     if (powered) {

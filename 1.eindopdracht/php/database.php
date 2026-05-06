@@ -17,21 +17,21 @@ if (mysqli_connect_errno()) {
     exit;
 }
 // zoekterm uit url halen
-$q = $_GET['q'] ?? '';
+$query = $_GET['q'] ?? '';
 // als zoeken leeg is, geef niks terug (lege lijst dan exit)
-if ($q === '') {
+if ($query === '') {
     echo json_encode([]);
     exit;
 }
 // sql query
 // ctype_digit checkt of het alleen nummers bevat
-if (ctype_digit($q)) {
+if (ctype_digit($query)) {
     $sql = "
     SELECT pokemon.*, types.type_name
     FROM pokemon
     LEFT JOIN pokemon_types USING (pok_id)
     LEFT JOIN types USING (type_id)
-    WHERE pok_id = $q
+    WHERE pok_id = $query
     ";
 } else {
     // als het letters is kan het afgerond worden door like
@@ -40,9 +40,10 @@ if (ctype_digit($q)) {
     FROM pokemon
     LEFT JOIN pokemon_types USING (pok_id)
     LEFT JOIN types USING (type_id)
-    WHERE pok_name = '$q'
-       OR pok_name LIKE '$q%'
+    WHERE pok_name = '$query'
+       OR pok_name LIKE '%$query%'
     ";
+    // een % is begint of eindigt twee %a% is als het er in zit
 }
 
 // doet de query

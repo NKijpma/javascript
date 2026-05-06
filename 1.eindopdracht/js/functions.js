@@ -2,6 +2,7 @@
 
 // alle functions die in eindopdracht.js & 2ds.js gebruikt worden
 
+//nodig voor het herfocusen van de searchbar zo kan je in een keer weer typen
 export function focusSearch() {
 
     const searchInput = document.getElementById("search");
@@ -51,6 +52,7 @@ export function poke_info(name, id, typing) {
     `;
 }
 
+// alle stats die bij de pokemon passen
 export function poke_stats(height, weight, exp) {
     const statsBox = document.querySelector("#pokemon_stats");
 
@@ -61,6 +63,7 @@ export function poke_stats(height, weight, exp) {
     `;
 }
 
+// nodig voor het connecten met database types met img types
 export const typechart = {
     normal: 1,
     fighting: 2,
@@ -82,6 +85,7 @@ export const typechart = {
     fairy: 18
 };
 
+// doet de id van suggestion pokemon in search en klikt dan op search btn
 export function show_suggestion(id) {
     document.querySelector("#search").value = id;
     document.querySelector("#search_button").click();
@@ -95,7 +99,7 @@ export function pokemon_suggestions() {
     const ids = new Set();
 
     while (ids.size < 8) {
-        ids.add(Math.floor(Math.random() * 721) + 1);
+        ids.add(Math.floor(Math.random() * 722));
     }
 
 
@@ -121,12 +125,14 @@ export function pokemon_suggestions() {
     });
 }
 
+//cleared de animatie
 export function restart_animation(element) {
     element.style.animation = 'none';
     element.offsetHeight;
     element.style.animation = '';
 }
 
+//cleared alles dat met pokemon te maken heeft
 export function reset_pokemon() {
     document.querySelector("#pokemon_name_id_typing").innerHTML = "";
     document.querySelector("#pokemon_image").src = "";

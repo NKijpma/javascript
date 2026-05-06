@@ -23,7 +23,7 @@ const playlist = [
     {src: `${PATH}/1.eindopdracht/mp3/wep-mp3/WEP-Fight-Back-OST.mp3`, name: "fightback-OST"}
 ];
 //=====================
-// change music volume
+// change music volume!?!?
 //=====================
 const VOLUME = 0.4;
 
@@ -34,7 +34,7 @@ current_audio.volume = VOLUME;
 let is_playing = false;
 
 //nodig voor het spinnen van vinyl
-const record = document.getElementById('poke_coin');
+const vinyl = document.getElementById('poke_coin');
 
 // maak eigen note spawner met een gif is wrs korter en simpler
 
@@ -48,13 +48,13 @@ function update_name() {
 export function play() {
     current_audio.play().catch(console.error);
     is_playing = true;
-    record.classList.add('rotate');
+    vinyl.classList.add('rotate');
 }
 
 export function pause() {
     current_audio.pause();
     is_playing = false;
-    record.classList.remove('rotate');
+    vinyl.classList.remove('rotate');
 }
 
 function switch_track(index) {
@@ -65,7 +65,7 @@ function switch_track(index) {
     current_audio.addEventListener('ended', () => next());
     current_audio.play().catch(console.error);
     is_playing = true;
-    record.classList.add('rotate');
+    vinyl.classList.add('rotate');
     playPauseBtn.textContent = '⏸';
     update_name();
 }
