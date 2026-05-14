@@ -14,6 +14,7 @@ html {
     background-size: cover;
 
 }
+
 #dropdown-menu {
     top: 1%;
     left: 1%;
@@ -114,4 +115,39 @@ html {
     animation-play-state: running;
 }
 
+@media (max-width: 768px) {
 
+    #dropdown-menu {
+        gap: 1vw;
+    }
+
+    #menu-toggle {
+        font-size: 0.8rem;
+    }
+
+    #color-options {
+        gap: 1vw;
+    }
+
+    #blue,
+    #green,
+    #pink {
+        width: 3vw;
+    }
+
+    #music-controls-container {
+        position: fixed;
+        width: 25%;
+        font-size: 2vw;
+        bottom: 1%;
+        left: 1%;
+    }
+
+    #music-name {
+        font-size: 2.4vw;
+    }
+
+    #back-button, #play-pause-button, #forward-button, #random-button{
+        font-size: 0.6rem;
+    }
+}

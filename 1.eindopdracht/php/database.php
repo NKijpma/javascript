@@ -41,7 +41,7 @@ if (ctype_digit($query)) {
     LEFT JOIN pokemon_types USING (pok_id)
     LEFT JOIN types USING (type_id)
     WHERE pok_name = '$query'
-       OR pok_name LIKE '%$query%'
+       OR pok_name LIKE '$query%'
     ";
     // een % is begint of eindigt twee %a% is als het er in zit
 }

@@ -1,3 +1,9 @@
+//=====================
+// change music volume!?!?
+//=====================
+const VOLUME = 0.4;
+
+
 const PATH = window.location.port === '80' || window.location.port === ''
     ? (window.location.hostname === 'localhost' ? '/js' : '')
     : '';
@@ -22,10 +28,6 @@ const playlist = [
     {src: `${PATH}/1.eindopdracht/mp3/wep-mp3/WEP-Encounter-OST.mp3`, name: "encounter-OST"},
     {src: `${PATH}/1.eindopdracht/mp3/wep-mp3/WEP-Fight-Back-OST.mp3`, name: "fightback-OST"}
 ];
-//=====================
-// change music volume!?!?
-//=====================
-const VOLUME = 0.4;
 
 let current_track = (Math.floor(Math.random() * playlist.length));
 let current_audio = new Audio(playlist[current_track].src);

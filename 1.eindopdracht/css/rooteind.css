@@ -1,9 +1,9 @@
 :root {
     /*fonts*/
-    --smallfs:  clamp(0.4vw, 0.6vw, 0.8vw);
+    --smallfs: clamp(0.4vw, 0.6vw, 0.8vw);
     --mediumfs: clamp(0.6vw, 0.8vw, 1vw);
-    --largefs:  clamp(0.8vw, 1vw,   1.2vw);
-    --gigafs:   clamp(1.4vw, 1.8vw, 2vw);
+    --largefs: clamp(0.8vw, 1vw, 1.2vw);
+    --gigafs: clamp(1.4vw, 1.8vw, 2vw);
 
 
     --white: rgb(255 255 255);
@@ -20,6 +20,15 @@
     --yellow: #cdb628;
     /*pink shell colors*/
     --pink: #f1afc2;
-    --darkpink:#df96ad ;
+    --darkpink: #df96ad;
 
 }
+
+/*@media (max-width: 768px) {*/
+/*    :root {*/
+/*        --smallfs: clamp(0.6vw, 0.9vw, 1.2vw);*/
+/*        --mediumfs: clamp(0.9vw, 1.2vw, 1.5vw);*/
+/*        --largefs: clamp(1.2vw, 1.5vw, 1.8vw);*/
+/*        --gigafs: clamp(2.1vw, 2.7vw, 3vw);*/
+/*    }*/
+/*}*/

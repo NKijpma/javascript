@@ -2,6 +2,9 @@
 
 // alle functions die in eindopdracht.js & 2ds.js gebruikt worden
 
+//mobile check
+const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+
 //nodig voor het herfocusen van de searchbar zo kan je in een keer weer typen
 export function focusSearch() {
 
@@ -9,6 +12,14 @@ export function focusSearch() {
 
     searchInput.focus();
 
+    if (isMobile){
+
+        // test nog wat empty doet
+
+        const searchInput = document.getElementById("");
+        searchInput.focus();
+
+    }
 }
 
 // op pokemon image klik swap normale pokemon gif naar shiny pokemon gif
@@ -99,7 +110,7 @@ export function pokemon_suggestions() {
     const ids = new Set();
 
     while (ids.size < 8) {
-        ids.add(Math.floor(Math.random() * 722));
+        ids.add(Math.floor(Math.random() * 721) + 1);
     }
 
 
@@ -132,7 +143,7 @@ export function restart_animation(element) {
     element.style.animation = '';
 }
 
-//cleared alles dat met pokemon te maken heeft
+//cleared alles wat met pokemon te maken heeft
 export function reset_pokemon() {
     document.querySelector("#pokemon_name_id_typing").innerHTML = "";
     document.querySelector("#pokemon_image").src = "";

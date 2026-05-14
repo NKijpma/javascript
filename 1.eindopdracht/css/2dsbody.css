@@ -289,3 +289,20 @@
     position: absolute;
     justify-content: center;
 }
+
+@media (max-width: 768px) {
+    #shell {
+        width: 90vw;
+        margin: 8% auto;
+    }
+
+    #start-btn,
+    #select-btn {
+        width: 3vw;
+    }
+
+    .ss-row span {
+        font-size: 2vw;
+        letter-spacing: 0.2vw;
+    }
+}

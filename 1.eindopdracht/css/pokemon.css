@@ -153,3 +153,42 @@
     opacity: 0.9;
     pointer-events: none;
 }
+
+
+@media (max-width: 768px) {
+
+    #pokemon_name_id_typing{
+        font-size: 0.4rem;
+    }
+
+    #pokemon_stats{
+        font-size: 0.3rem;
+    }
+    #pokemon_image {
+        max-width: 24vw;
+        max-height: 24vw;
+    }
+
+    #pokemon_typing img {
+        width: 8vw;
+        max-width: 9vw;
+    }
+
+
+    #search{
+        font-size: 1vw;
+    }
+
+    .id-label {
+        font-size: 1.2vw;
+    }
+
+    .suggestion-box {
+        border-radius: 0.75vw;
+    }
+
+    .suggestion-box .id-label {
+        top: 0.2vw;
+        left: 0.45vw;
+    }
+}

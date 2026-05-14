@@ -66,7 +66,7 @@ on_button.addEventListener("click", () => {
 
             searchInput.focus();
             pokemon_suggestions();
-        }, 800);
+        }, 1400);
     } else {
         document.getElementById("shell").classList.remove("glow");
 
